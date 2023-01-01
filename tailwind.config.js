@@ -5,7 +5,21 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        fadein: {
+          '0%': { opacity: '0', top: '0px' },
+          '100%': { opacticy: '1', top: '-200px' }
+        }
+      },
+      animation: {
+        'fade-in': 'fadein 1.3s ease-out forwards',
+      },
+      backgroundImage: {
+        'index-wp': "url('../public/assets/senior-care.webp')",
+        'custom-grad': "linear-gradient(to top, rgba(35, 60, 123, 0.8), rgba(35, 60, 123, 0.6))"
+      },
+    },
   },
   plugins: [],
 }
