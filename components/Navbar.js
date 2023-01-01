@@ -58,7 +58,7 @@ export default function Navbar() {
             <div className="w-3/12 flex items-center">
                 <Link className="text-2xl font-semibold" href="/">
                     <Image
-                        src="/../public/assets/ls-logo (1).webp"
+                        src={logo}
                         width={80}
                         height={80}
                         alt="Das Logo der Landschwestern"
