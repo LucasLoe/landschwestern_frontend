@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import logo from '../public/assets/ls-logo (1).webp'
 
 function NavLink({ to, children }) {
     return (
@@ -18,7 +19,7 @@ function MobileNav({ open, setOpen }) {
             <div className="flex items-center justify-center filter drop-shadow-md bg-white h-20"> {/*logo container*/}
                 <Link className="text-xl font-semibold" href="/">
                     <Image
-                        src="/../public/assets/ls-logo (1).webp"
+                        src={logo}
                         width={80}
                         height={80}
                         alt="Das Logo der Landschwestern"
