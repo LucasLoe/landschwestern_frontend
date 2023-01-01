@@ -84,7 +84,7 @@ export default function Home() {
 
         <div className='h-auto w-full px-4 py-8 flex flex-col lg:flex-row align-center'>
           <Image
-            src="/../public/assets/ls-logo (1).webp"
+            src="/assets/ls-logo (1).webp"
             width={700}
             height={700}
             alt="Das Logo der Landschwestern GbR"
