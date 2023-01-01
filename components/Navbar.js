@@ -1,13 +1,15 @@
 import { useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 function NavLink({ to, children }) {
     return (
-        <a href={to} className={`h-20 my-auto font-bold text-[color:var(--ls-blue)] text-xl text-center`}>
+        <Link href={to} className={`h-20 my-auto font-bold text-[color:var(--ls-blue)] text-xl text-center`}>
             <div className='h-20 hover:bg-[color:var(--ls-blue)] hover:text-[color:var(--ls-white)] flex my-auto items-center px-6'>
                 {children}
             </div>
-        </a>)
+        </Link>
+    )
 }
 
 function MobileNav({ open, setOpen }) {
@@ -23,24 +25,24 @@ function MobileNav({ open, setOpen }) {
                     /> </a>
             </div>
             <div className="flex flex-col ml-4 h-full pl-4 pt-4">
-                <a className=" text-xl text-[color:var(--ls-yellow)] my-4" href="/" onClick={() => setTimeout(() => { setOpen(!open) }, 100)}>
+                <Link className=" text-xl text-[color:var(--ls-yellow)] my-4" href="/" onClick={() => setTimeout(() => { setOpen(!open) }, 100)}>
                     Startseite
-                </a>
-                <a className=" text-xl text-[color:var(--ls-yellow)] my-4" href="/ueber-uns" onClick={() => setTimeout(() => { setOpen(!open) }, 100)}>
+                </Link>
+                <Link className=" text-xl text-[color:var(--ls-yellow)] my-4" href="/ueber-uns" onClick={() => setTimeout(() => { setOpen(!open) }, 100)}>
                     Über Uns
-                </a>
-                <a className=" text-xl text-[color:var(--ls-yellow)] my-4" href="/leistungen" onClick={() => setTimeout(() => { setOpen(!open) }, 100)}>
+                </Link>
+                <Link className=" text-xl text-[color:var(--ls-yellow)] my-4" href="/leistungen" onClick={() => setTimeout(() => { setOpen(!open) }, 100)}>
                     Leistungen
-                </a>
-                <a className=" text-xl text-[color:var(--ls-yellow)] my-4" href="/tagespflege" onClick={() => setTimeout(() => { setOpen(!open) }, 100)}>
+                </Link>
+                <Link className=" text-xl text-[color:var(--ls-yellow)] my-4" href="/tagespflege" onClick={() => setTimeout(() => { setOpen(!open) }, 100)}>
                     Tagespflege
-                </a>
-                <a className=" text-xl text-[color:var(--ls-yellow)] my-4" href="/seniorenwohngemeinschaft" onClick={() => setTimeout(() => { setOpen(!open) }, 100)}>
+                </Link>
+                <Link className=" text-xl text-[color:var(--ls-yellow)] my-4" href="/seniorenwohngemeinschaft" onClick={() => setTimeout(() => { setOpen(!open) }, 100)}>
                     Wohngemeinschaft für Senioren
-                </a>
-                <a className=" text-xl text-[color:var(--ls-yellow)] my-4" href="/jobs" onClick={() => setTimeout(() => { setOpen(!open) }, 100)}>
+                </Link>
+                <Link className=" text-xl text-[color:var(--ls-yellow)] my-4" href="/jobs" onClick={() => setTimeout(() => { setOpen(!open) }, 100)}>
                     Jobs
-                </a>
+                </Link>
             </div>
         </div>
     )

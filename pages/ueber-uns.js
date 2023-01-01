@@ -22,7 +22,7 @@ export default function ueberUns() {
                 <Wallpaper srcString={"/../public/assets/jobs-wallpaper.jpg"} />
                 <div className='mx-auto max-w-6xl'>
                     <div className="about-us-container flex flex-col lg:flex-row items-top p-4">
-                        <Image src="/../public/assets/about-us.jpg" width={600} height={600} className="object-cover w-[70vw] m-6 lg:w-60 lg:h-60" />
+                        <Image src="/../public/assets/about-us.jpg" width={600} height={600} className="object-cover w-[70vw] m-6 lg:w-60 lg:h-60" alt="something" />
                         <div className="wrapper text-center lg:text-left">
                             <div className="h2-container inline-block relative mb-12 lg:mt-12 lg:mx-auto lg:text-center ">
                                 <h2 className='text-2xl font-extrabold text-[color:var(--ls-blue)] text-center lg:text-left'> Über Uns: Die Landschwestern</h2>
@@ -36,7 +36,7 @@ export default function ueberUns() {
                     </div>
 
                     <div className="about-us-container flex flex-col lg:flex-row items-top p-4">
-                        <Image src="/../public/assets/about-us.jpg" width={300} height={300} className="object-cover w-[70vw] m-6 lg:w-60 lg:h-60" />
+                        <Image src="/../public/assets/about-us.jpg" width={300} height={300} className="object-cover w-[70vw] m-6 lg:w-60 lg:h-60" alt="something"/>
 
                         <div className="wrapper text-center lg:text-left">
                             <div className="h2-container inline-block relative mb-12 lg:mt-12 lg:mx-auto lg:text-center ">

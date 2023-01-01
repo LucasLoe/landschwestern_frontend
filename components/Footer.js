@@ -16,7 +16,7 @@ export default function Footer() {
                 <p>Prenzlauer Str. 20</p>
                 <p>17291 Nordwestuckermark</p>
                 <br />
-                <p><FontAwesomeIcon icon={faArrowRight} /><a href="https://www.google.com/maps/place/Prenzlauer+Str.+20,+17291+Nordwestuckermark/@53.297413,13.7217061,17z/data=!3m1!4b1!4m5!3m4!1s0x47aa29d6b93e95bd:0xf0cbf15cdacd36bb!8m2!3d53.297413!4d13.7238948?hl=de" target="_blank"> In Google Maps öffnen </a></p>
+                <p><FontAwesomeIcon icon={faArrowRight} /><a href="https://www.google.com/maps/place/Prenzlauer+Str.+20,+17291+Nordwestuckermark/@53.297413,13.7217061,17z/data=!3m1!4b1!4m5!3m4!1s0x47aa29d6b93e95bd:0xf0cbf15cdacd36bb!8m2!3d53.297413!4d13.7238948?hl=de" target="https://google.com"> In Google Maps öffnen </a></p>
             </div>
 
             <div className=" footer-row h-auto lg:h-48 w-64 lg:w-auto my-5 mx-0 lg:mx-20 lg:my-2.5">
