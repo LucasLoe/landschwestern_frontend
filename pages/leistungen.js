@@ -78,7 +78,7 @@ export default function leistungen() {
             </Head>
             <Navbar />
             <main>
-                <Wallpaper srcString={"/../public/assets/jobs-wallpaper.jpg"} />
+                <Wallpaper srcString={"/assets/jobs-wallpaper.jpg"} />
                 <div className='max-w-6xl mx-auto flex flex-row flex-wrap justify-evenly'>
                     <DoubleFacedCard title={Krankenkasse.title} text={Krankenkasse.text} icon={faHospitalUser} hoverText={Krankenkasse.hoverText} />
                     <DoubleFacedCard title={Pflegekasse.title} text={Krankenkasse.text} icon={faPersonCane} hoverText={Pflegekasse.hoverText} />

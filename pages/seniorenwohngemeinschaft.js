@@ -9,25 +9,25 @@ import ContactCard from '../components/ContactCard'
 const no1 = {
     title: "Das ist eine Überschrift.",
     text: "Häusliche Krankenpflege ist eine Leistung der gesetzlichen Krankenkasse und wird dann durchgeführt, wenn die Versorgung vom Patienten oder dessen Angehörigen nicht selber durchgeführt werden kann.",
-    imageSrc: "/../public/assets/leistungen_sample.jpg"
+    imageSrc: "/assets/leistungen_sample.jpg"
 }
 
 const no2 = {
     title: "Das ist eine Überschrift.",
     text: "Häusliche Krankenpflege ist eine Leistung der gesetzlichen Krankenkasse und wird dann durchgeführt, wenn die Versorgung vom Patienten oder dessen Angehörigen nicht selber durchgeführt werden kann.",
-    imageSrc: "/../public/assets/leistungen_sample.jpg"
+    imageSrc: "/assets/leistungen_sample.jpg"
 }
 
 const no3 = {
     title: "Das ist eine Überschrift.",
     text: "Häusliche Krankenpflege ist eine Leistung der gesetzlichen Krankenkasse und wird dann durchgeführt, wenn die Versorgung vom Patienten oder dessen Angehörigen nicht selber durchgeführt werden kann.",
-    imageSrc: "/../public/assets/leistungen_sample.jpg"
+    imageSrc: "/assets/leistungen_sample.jpg"
 }
 
 const no4 = {
     title: "Das ist eine Überschrift.",
     text: "Häusliche Krankenpflege ist eine Leistung der gesetzlichen Krankenkasse und wird dann durchgeführt, wenn die Versorgung vom Patienten oder dessen Angehörigen nicht selber durchgeführt werden kann.",
-    imageSrc: "/../public/assets/leistungen_sample.jpg"
+    imageSrc: "/assets/leistungen_sample.jpg"
 }
 
 export default function leistungen() {
@@ -41,7 +41,7 @@ export default function leistungen() {
             </Head>
             <Navbar />
             <main>
-                <Wallpaper srcString={"/../public/assets/jobs-wallpaper.jpg"} />
+                <Wallpaper srcString={"/assets/jobs-wallpaper.jpg"} />
                 <div className='max-w-6xl mx-auto flex flex-col lg:flex-row flex-wrap justify-center px-4 lg:px-8 lg:justify-between'>
                     <SingleFacedCard title={no1.title} text={no1.text} imageSrc={no1.imageSrc} />
                     <SingleFacedCard title={no2.title} text={no2.text} imageSrc={no2.imageSrc} />

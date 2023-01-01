@@ -21,7 +21,7 @@ export default function jobs() {
             <Navbar />
             <main>
 
-                <Wallpaper srcString={"/../public/assets/jobs-wallpaper.jpg"} />
+                <Wallpaper srcString={"/assets/jobs-wallpaper.jpg"} />
 
                 <div id="job-offer-container" className='w-auto px-6 lg:px-[20%] py-12 flex justify-center flex-col'>
                     <h2 className='text-4xl text-center text-[color:var(--ls-blue)] font-extrabold'> Auf der Suche nach einem <br />  <strong>spannenden</strong>  Job im Herzen der Uckermark?</h2>

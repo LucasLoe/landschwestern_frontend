@@ -25,7 +25,7 @@ export default function Home() {
       </Head>
       <Navbar />
       <main>
-        <Wallpaper srcString={"/../public/assets/um-test.jpg"} />
+        <Wallpaper srcString={"/assets/um-test.jpg"} />
         <div id="second-banner" className='h-auto lg:h-[500px] w-full bg-[color:var(--ls-blue)]'>
           <div className="willkommen-catbox-container flex flex-col lg:flex-row justify-around lg:justify-center align-middle">
 
