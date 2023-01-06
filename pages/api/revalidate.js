@@ -15,9 +15,11 @@ const handler = async (req, res) => {
             return res.status(401).json({ msg: 'Invalid request!' });
 
         //getting payload
-        console.log(req.body)
+        console.log(req.body._type)
         const { page } = req.body._type;
+        console.log(`/${page}`)
         await res.revalidate(`/${page}`);
+        
 
         res.status(200).json({ msg: 'Pages revalidated.' });
     } catch (error) {
