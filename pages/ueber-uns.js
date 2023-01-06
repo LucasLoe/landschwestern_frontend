@@ -16,23 +16,6 @@ export default function ueberUns(data) {
         return imageUrlBuilder(client).image(source)
     }
 
-    const ptComponents = {
-        types: {
-            image: ({ value }) => {
-                if (!value?.asset?._ref) {
-                    return null
-                }
-                return (
-                    <img
-                        alt={value.alt || ' '}
-                        loading="lazy"
-                        src={urlFor(value).width(320).height(240).fit('max').auto('format')}
-                    />
-                )
-            }
-        }
-    }
-
     console.log(data)
     return (
         <>
@@ -45,7 +28,7 @@ export default function ueberUns(data) {
             <Navbar />
             <main>
 
-                <Wallpaper srcString={"/assets/jobs-wallpaper.jpg"} />
+                <Wallpaper srcString={urlFor(data.data.image.asset._ref).url()}  />
                 <div className='mx-auto max-w-6xl'>
                     <div className="about-us-container flex flex-col lg:flex-row items-top p-4">
                         <Image src={urlFor(data.data.imageTop.asset._ref).url()} width={600} height={600} className="object-cover w-[70vw] m-6 lg:w-60 lg:h-60" alt="something" />

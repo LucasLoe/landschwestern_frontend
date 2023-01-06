@@ -11,9 +11,6 @@ import imageUrlBuilder from '@sanity/image-url'
 
 export default function SeniorCare(data) {
 
-    console.log(data)
-    console.log("test")
-
     function urlFor(source) {
         return imageUrlBuilder(client).image(source)
     }
@@ -28,7 +25,7 @@ export default function SeniorCare(data) {
             </Head>
             <Navbar />
             <main>
-                <Wallpaper srcString={"/assets/jobs-wallpaper.jpg"} />
+                <Wallpaper srcString={urlFor(data.data.image.asset._ref).url()} />
                 <div className='max-w-6xl mx-auto flex flex-col lg:flex-row flex-wrap justify-center px-4 lg:px-8 lg:justify-between'>
                     <SingleFacedCard title={data.data.boxHeading_1} text={data.data.boxSubText_1} imageSrc={urlFor(data.data.boxImage_1.asset._ref).url()} />
                     <SingleFacedCard title={data.data.boxHeading_2} text={data.data.boxSubText_2} imageSrc={urlFor(data.data.boxImage_2.asset._ref).url()} />

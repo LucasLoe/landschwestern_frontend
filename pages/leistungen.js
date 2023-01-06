@@ -12,61 +12,6 @@ import { faPersonCane } from '@fortawesome/free-solid-svg-icons'
 import { faPeopleRoof } from '@fortawesome/free-solid-svg-icons'
 import { faPersonShelter } from '@fortawesome/free-solid-svg-icons'
 
-const Krankenkasse = {
-    title: "Leistungen der Krankenkassen",
-    text: "Häusliche Krankenpflege ist eine Leistung der gesetzlichen Krankenkasse und wird dann durchgeführt, wenn die Versorgung vom Patienten oder dessen Angehörigen nicht selber durchgeführt werden kann.",
-    hoverText: {
-        type: "array",
-        content: [
-            "Medikamentenvergabe und Hilfe beim Einnehmen",
-            "Gabe von Injektonen und Infusionen",
-            "Wechsel von Verbänden",
-            "Katheter-, Stoma- und Portversorgung",
-            "+ viele weitere Leistungen"
-        ]
-    }
-}
-const Pflegekasse = {
-    title: "Leistungen der Pflegekasse",
-    text: "Wir unterstützen Sie mit unserer ambulanten Seniorenbetreuung bei behördlichen und medizinischen Angelegenheiten, begleiten Sie zu Behörden und Kassen und holen für Sie Rezepte ab.",
-    hoverText: {
-        type: "array",
-        content: [
-            "Realisierung der entsprechenden Leistungen der Pflegegrade 1-5",
-            "Sach- und Kombinationsleistungen",
-            "Tagespflege und Wohngemeinschaften",
-            "Körperpflege: Hilfe und Durchführung",
-            "Abstimmung der benötigten Pflegedienstleistungen nach individuellen Bedürfnissen und Lebenslage"
-        ]
-    }
-}
-const Tagespflege = {
-    title: "Tagespflege",
-    text: "Wir haben eine Tagespflege in [Ort].",
-    hoverText: {
-        type: "array",
-        content: [
-            "a",
-            "a",
-            "a",
-            "a"
-        ]
-    }
-}
-const Seniorengemeinschaft = {
-    title: "Senioren-Wohngemeinschaft",
-    text: "Wir besitzen eine Senioren-Wohngemeinschaft mit 24h vor-Ort-Betreuung in Gollmitz.",
-    hoverText: {
-        type: "array",
-        content: [
-            "a",
-            "a",
-            "a",
-            "a"
-        ]
-    }
-}
-
 export default function leistungen() {
     return (
         <>
@@ -78,7 +23,7 @@ export default function leistungen() {
             </Head>
             <Navbar />
             <main>
-                <Wallpaper srcString={"/assets/jobs-wallpaper.jpg"} />
+                <Wallpaper srcString={urlFor(data.data.image.asset._ref).url()} />
                 <div className='max-w-6xl mx-auto flex flex-row flex-wrap justify-evenly'>
                     <DoubleFacedCard title={Krankenkasse.title} text={Krankenkasse.text} icon={faHospitalUser} hoverText={Krankenkasse.hoverText} />
                     <DoubleFacedCard title={Pflegekasse.title} text={Krankenkasse.text} icon={faPersonCane} hoverText={Pflegekasse.hoverText} />

@@ -6,12 +6,9 @@ import Wallpaper from '../components/Wallpaper'
 import SingleFacedCard from '../components/SingleFacedCard'
 import ContactCard from '../components/ContactCard'
 import imageUrlBuilder from '@sanity/image-url'
-import { PortableText } from '@portabletext/react'
 import client from '../client'
 
 export default function Tagespflege(data) {
-
-    console.log(data.data)
 
     function urlFor(source) {
         return imageUrlBuilder(client).image(source)

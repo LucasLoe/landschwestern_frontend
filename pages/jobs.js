@@ -7,11 +7,17 @@ import '@fortawesome/fontawesome-svg-core/styles.css'
 import { faCrutch } from '@fortawesome/free-solid-svg-icons'
 import { faCheck } from '@fortawesome/free-solid-svg-icons'
 import { faPhone } from '@fortawesome/free-solid-svg-icons'
+import imageUrlBuilder from '@sanity/image-url'
+
 
 import client from '../client'
 
 export default function jobs(data) {
-    console.log(data.data)
+
+    function urlFor(source) {
+        return imageUrlBuilder(client).image(source)
+    }
+
     return (
         <>
             <Head>
@@ -23,7 +29,7 @@ export default function jobs(data) {
             <Navbar />
             <main>
 
-                <Wallpaper srcString={"/assets/jobs-wallpaper.jpg"} />
+            <Wallpaper srcString={urlFor(data.data.image.asset._ref).url()} />
 
                 <div id="job-offer-container" className='w-auto px-6 lg:px-[20%] py-12 flex justify-center flex-col'>
                     <h2 className='text-4xl text-center text-[color:var(--ls-blue)] font-extrabold'> {data.data.pageHeading} </h2>
