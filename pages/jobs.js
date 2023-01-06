@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import Wallpaper from '../components/Wallpaper'
@@ -9,7 +8,10 @@ import { faCrutch } from '@fortawesome/free-solid-svg-icons'
 import { faCheck } from '@fortawesome/free-solid-svg-icons'
 import { faPhone } from '@fortawesome/free-solid-svg-icons'
 
-export default function jobs() {
+import client from '../client'
+
+export default function jobs(data) {
+    console.log(data.data)
     return (
         <>
             <Head>
@@ -24,47 +26,53 @@ export default function jobs() {
                 <Wallpaper srcString={"/assets/jobs-wallpaper.jpg"} />
 
                 <div id="job-offer-container" className='w-auto px-6 lg:px-[20%] py-12 flex justify-center flex-col'>
-                    <h2 className='text-4xl text-center text-[color:var(--ls-blue)] font-extrabold'> Auf der Suche nach einem <br />  <strong>spannenden</strong>  Job im Herzen der Uckermark?</h2>
+                    <h2 className='text-4xl text-center text-[color:var(--ls-blue)] font-extrabold'> {data.data.pageHeading} </h2>
                     <br />
-                    <p > Wenn Sie zuverlässig sind und gut gelaunt in einem dynamischen Team arbeiten möchten, dann melden Sie sich bei uns telefonisch. Für Auskünfte steht Ihnen Frau Löser ( <FontAwesomeIcon icon={faPhone} /> 039852-18836)  gerne zur Verfügung.</p>
+                    <p > {data.data.pageSubheading} </p>
                     <br />
                     <div className="job-details-container w-full lg:w-auto block py-5 px-5 lg:px-12 my-5 mx-0 lg:mx-[10%] rounded-2xl border-8 border-[color:var(--ls-yellow)]">
-                        <h3 className='text-2xl lg:text-3xl w-auto font-extrabold text-[color:var(--ls-blue)] text-center lg:text-left'> Ihre Aufgaben in der Pflege bei uns:</h3>
+                        <h3 className='text-2xl lg:text-3xl w-auto font-extrabold text-[color:var(--ls-blue)] text-center lg:text-left'>{data.data.boxTopHeading}</h3>
                         <br />
                         <ul className='text-md lg:text-lg'>
-                            <li><FontAwesomeIcon icon={faCrutch} className='fa-flip-horizontal' /> Grund- und Behandlungspflege</li>
-                            <br />
-                            <li><FontAwesomeIcon icon={faCrutch} className='fa-flip-horizontal' /> Dokumentation der Pflegearbeit</li>
-                            <br />
-                            <li><FontAwesomeIcon icon={faCrutch} className='fa-flip-horizontal' /> Administrative Tätigkeiten</li>
-                            <br />
-                            <li><FontAwesomeIcon icon={faCrutch} className='fa-flip-horizontal' /> Umsetzen unseres Pflegekonzepts</li>
-                            <br />
-                            <li><FontAwesomeIcon icon={faCrutch} className='fa-flip-horizontal' /> Einbringen in das Team mit kreativen und innovativen Ideen</li>
+                            {
+                                data.data.boxTopArray && data.data.boxTopArray.map(e => (
+                                    <>
+                                        <li><FontAwesomeIcon icon={faCrutch} className='fa-flip-horizontal mr-2' />{e}</li>
+                                        <br />
+                                    </>
+                                ))
+                            }
                         </ul>
                     </div>
 
                     <div className="job-details-container job-details-container w-full lg:w-auto block py-5 px-5 lg:px-12 my-5 mx-0 lg:mx-[10%] rounded-2xl border-8 border-[color:var(--ls-yellow)]">
-                        <h3 className='text-2xl lg:text-3xl w-auto font-extrabold text-[color:var(--ls-blue)] text-center lg:text-left'> Das erwartet Sie:</h3>
+                        <h3 className='text-2xl lg:text-3xl w-auto font-extrabold text-[color:var(--ls-blue)] text-center lg:text-left'>{data.data.boxBottomHeading}</h3>
                         <br />
                         <ul className=' text-md lg:text-lg'>
-                            <li><FontAwesomeIcon icon={faCheck} /> Grund- und Behandlungspflege</li>
-                            <br />
-                            <li><FontAwesomeIcon icon={faCheck} /> Dokumentation der Pflegearbeit</li>
-                            <br />
-                            <li><FontAwesomeIcon icon={faCheck} /> Administrative Tätigkeiten</li>
-                            <br />
-                            <li><FontAwesomeIcon icon={faCheck} /> Umsetzen unseres Pflegekonzepts</li>
-                            <br />
-                            <li><FontAwesomeIcon icon={faCheck} /> Einbringen in das Team mit kreativen und innovativen Ideen</li>
+                            {
+                                data.data.boxBottomArray && data.data.boxBottomArray.map(e => (
+                                    <>
+                                        <li><FontAwesomeIcon icon={faCheck} className='mr-2' />{e}</li>
+                                        <br />
+                                    </>
+                                ))
+                            }
                         </ul>
                     </div>
-
-
                 </div>
 
             </main>
             <Footer />
         </>
     )
+}
+
+export async function getStaticProps() {
+    const data = await client.fetch(`*[_type=='jobsPage'][0]`);
+
+    return {
+        props: {
+            data
+        }
+    };
 }

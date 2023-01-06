@@ -5,32 +5,19 @@ import Footer from '../components/Footer'
 import Wallpaper from '../components/Wallpaper'
 import SingleFacedCard from '../components/SingleFacedCard'
 import ContactCard from '../components/ContactCard'
+import client from '../client'
+import { PortableText } from '@portabletext/react'
+import imageUrlBuilder from '@sanity/image-url'
 
-const no1 = {
-    title: "Das ist eine Überschrift.",
-    text: "Häusliche Krankenpflege ist eine Leistung der gesetzlichen Krankenkasse und wird dann durchgeführt, wenn die Versorgung vom Patienten oder dessen Angehörigen nicht selber durchgeführt werden kann.",
-    imageSrc: "/assets/leistungen_sample.jpg"
-}
+export default function SeniorCare(data) {
 
-const no2 = {
-    title: "Das ist eine Überschrift.",
-    text: "Häusliche Krankenpflege ist eine Leistung der gesetzlichen Krankenkasse und wird dann durchgeführt, wenn die Versorgung vom Patienten oder dessen Angehörigen nicht selber durchgeführt werden kann.",
-    imageSrc: "/assets/leistungen_sample.jpg"
-}
+    console.log(data)
+    console.log("test")
 
-const no3 = {
-    title: "Das ist eine Überschrift.",
-    text: "Häusliche Krankenpflege ist eine Leistung der gesetzlichen Krankenkasse und wird dann durchgeführt, wenn die Versorgung vom Patienten oder dessen Angehörigen nicht selber durchgeführt werden kann.",
-    imageSrc: "/assets/leistungen_sample.jpg"
-}
+    function urlFor(source) {
+        return imageUrlBuilder(client).image(source)
+    }
 
-const no4 = {
-    title: "Das ist eine Überschrift.",
-    text: "Häusliche Krankenpflege ist eine Leistung der gesetzlichen Krankenkasse und wird dann durchgeführt, wenn die Versorgung vom Patienten oder dessen Angehörigen nicht selber durchgeführt werden kann.",
-    imageSrc: "/assets/leistungen_sample.jpg"
-}
-
-export default function leistungen() {
     return (
         <>
             <Head>
@@ -43,16 +30,25 @@ export default function leistungen() {
             <main>
                 <Wallpaper srcString={"/assets/jobs-wallpaper.jpg"} />
                 <div className='max-w-6xl mx-auto flex flex-col lg:flex-row flex-wrap justify-center px-4 lg:px-8 lg:justify-between'>
-                    <SingleFacedCard title={no1.title} text={no1.text} imageSrc={no1.imageSrc} />
-                    <SingleFacedCard title={no2.title} text={no2.text} imageSrc={no2.imageSrc} />
-                    <SingleFacedCard title={no3.title} text={no3.text} imageSrc={no3.imageSrc} />
-                    <SingleFacedCard title={no4.title} text={no4.text} imageSrc={no4.imageSrc} />
+                    <SingleFacedCard title={data.data.boxHeading_1} text={data.data.boxSubText_1} imageSrc={urlFor(data.data.boxImage_1.asset._ref).url()} />
+                    <SingleFacedCard title={data.data.boxHeading_2} text={data.data.boxSubText_2} imageSrc={urlFor(data.data.boxImage_2.asset._ref).url()} />
+                    <SingleFacedCard title={data.data.boxHeading_3} text={data.data.boxSubText_3} imageSrc={urlFor(data.data.boxImage_3.asset._ref).url()} />
+                    <SingleFacedCard title={data.data.boxHeading_4} text={data.data.boxSubText_4} imageSrc={urlFor(data.data.boxImage_4.asset._ref).url()} />
                     <div className='mx-auto'>
-                        <ContactCard />
+                        <ContactCard title={data.data.contactCardHeading} text={data.data.contactCardText} imageSrc={urlFor(data.data.contactCardImage.asset._ref).url()} />
                     </div>
                 </div>
             </main>
             <Footer />
         </>
     )
+}
+
+export async function getStaticProps() {
+    const data = await client.fetch(`*[_type=='wohngemeinschaftPage'][0]`);
+    return {
+        props: {
+            data
+        }
+    };
 }

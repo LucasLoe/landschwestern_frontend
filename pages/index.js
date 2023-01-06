@@ -36,7 +36,7 @@ const ptComponents = {
 export default function Home({ data }) {
 
   if (data) {
-    console.log(data.bio)
+    console.log(urlFor(data.image.asset._ref).url())
   }
 
   return (
@@ -49,7 +49,7 @@ export default function Home({ data }) {
       </Head>
       <Navbar />
       <main>
-        <Wallpaper srcString={"/assets/um-test.jpg"} />
+        <Wallpaper srcString={urlFor(data.image.asset._ref).url()} />
         <div id="second-banner" className='h-auto lg:h-[500px] w-full bg-[color:var(--ls-blue)]'>
           <div className="willkommen-catbox-container flex flex-col lg:flex-row justify-around lg:justify-center align-middle">
 

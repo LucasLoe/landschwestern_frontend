@@ -5,9 +5,35 @@ import Footer from '../components/Footer'
 import Wallpaper from '../components/Wallpaper'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import '@fortawesome/fontawesome-svg-core/styles.css'
+import client from '../client'
+import imageUrlBuilder from '@sanity/image-url'
+import { PortableText } from '@portabletext/react'
 
 
-export default function ueberUns() {
+export default function ueberUns(data) {
+
+    function urlFor(source) {
+        return imageUrlBuilder(client).image(source)
+    }
+
+    const ptComponents = {
+        types: {
+            image: ({ value }) => {
+                if (!value?.asset?._ref) {
+                    return null
+                }
+                return (
+                    <img
+                        alt={value.alt || ' '}
+                        loading="lazy"
+                        src={urlFor(value).width(320).height(240).fit('max').auto('format')}
+                    />
+                )
+            }
+        }
+    }
+
+    console.log(data)
     return (
         <>
             <Head>
@@ -22,31 +48,29 @@ export default function ueberUns() {
                 <Wallpaper srcString={"/assets/jobs-wallpaper.jpg"} />
                 <div className='mx-auto max-w-6xl'>
                     <div className="about-us-container flex flex-col lg:flex-row items-top p-4">
-                        <Image src="/assets/about-us.jpg" width={600} height={600} className="object-cover w-[70vw] m-6 lg:w-60 lg:h-60" alt="something" />
+                        <Image src={urlFor(data.data.imageTop.asset._ref).url()} width={600} height={600} className="object-cover w-[70vw] m-6 lg:w-60 lg:h-60" alt="something" />
                         <div className="wrapper text-center lg:text-left">
                             <div className="h2-container inline-block relative mb-12 lg:mt-12 lg:mx-auto lg:text-center ">
-                                <h2 className='text-2xl font-extrabold text-[color:var(--ls-blue)] text-center lg:text-left'> Über Uns: Die Landschwestern</h2>
+                                <h2 className='text-2xl font-extrabold text-[color:var(--ls-blue)] text-center lg:text-left'>{data.data.headerTop}</h2>
                                 <div className="yellow-bar"></div>
                             </div>
-                            <p> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-                                sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-                                ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
-                                magna aliquyam erat, sed diam voluptua. At vero eos et ccusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                            <div>
+                                <PortableText value={data.data.descriptionTop} className='text-center lg:text-left' />
+                            </div>
                         </div>
                     </div>
 
                     <div className="about-us-container flex flex-col lg:flex-row items-top p-4">
-                        <Image src="/assets/about-us.jpg" width={300} height={300} className="object-cover w-[70vw] m-6 lg:w-60 lg:h-60" alt="something"/>
+                        <Image src={urlFor(data.data.imageBottom.asset._ref).url()} width={300} height={300} className="object-cover w-[70vw] m-6 lg:w-60 lg:h-60" alt="something" />
 
                         <div className="wrapper text-center lg:text-left">
                             <div className="h2-container inline-block relative mb-12 lg:mt-12 lg:mx-auto lg:text-center ">
-                                <h2 className='text-2xl font-extrabold text-[color:var(--ls-blue)] text-center lg:text-left'> Unser Team:</h2>
+                                <h2 className='text-2xl font-extrabold text-[color:var(--ls-blue)] text-center lg:text-left'>{data.data.headerBottom}</h2>
                                 <div className="yellow-bar"></div>
                             </div>
-                            <p> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-                                sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-                                ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
-                                magna aliquyam erat, sed diam voluptua. At vero eos et ccusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                            <div>
+                                <PortableText value={data.data.descriptionBottom} className='text-center lg:text-left' />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -55,4 +79,14 @@ export default function ueberUns() {
             <Footer />
         </>
     )
+}
+
+export async function getStaticProps() {
+    const data = await client.fetch(`*[_type=='aboutUsPage'][0]`);
+
+    return {
+        props: {
+            data
+        }
+    };
 }
