@@ -11,12 +11,16 @@ import { faHospitalUser } from '@fortawesome/free-solid-svg-icons'
 import { faPersonCane } from '@fortawesome/free-solid-svg-icons'
 import { faPeopleRoof } from '@fortawesome/free-solid-svg-icons'
 import { faPersonShelter } from '@fortawesome/free-solid-svg-icons'
+import client from '../client'
+import imageUrlBuilder from '@sanity/image-url'
+
 
 function urlFor(source) {
     return imageUrlBuilder(client).image(source)
 }
 
-export default function leistungen() {
+export default function leistungen(data) {
+
     return (
         <>
             <Head>
@@ -27,15 +31,25 @@ export default function leistungen() {
             </Head>
             <Navbar />
             <main>
-                <Wallpaper srcString={urlFor(data.data.image.asset._ref).url()} />
+            <Wallpaper srcString={urlFor(data.data.image.asset._ref).url()} />
                 <div className='max-w-6xl mx-auto flex flex-row flex-wrap justify-evenly'>
-                    <DoubleFacedCard title={Krankenkasse.title} text={Krankenkasse.text} icon={faHospitalUser} hoverText={Krankenkasse.hoverText} />
-                    <DoubleFacedCard title={Pflegekasse.title} text={Krankenkasse.text} icon={faPersonCane} hoverText={Pflegekasse.hoverText} />
-                    <DoubleFacedCard title={Tagespflege.title} text={Tagespflege.text} icon={faPeopleRoof} hoverText={Tagespflege.hoverText} />
-                    <DoubleFacedCard title={Seniorengemeinschaft.title} text={Seniorengemeinschaft.text} icon={faPersonShelter} hoverText={Seniorengemeinschaft.hoverText} />
+                    <DoubleFacedCard title={data.data.boxHeading_1} text={data.data.boxSubtext_1} icon={faHospitalUser} hoverText={data.data.boxFlipSideArray_1} />
+                    <DoubleFacedCard title={data.data.boxHeading_2} text={data.data.boxSubtext_2} icon={faPersonCane} hoverText={data.data.boxFlipSideArray_2} />
+                    <DoubleFacedCard title={data.data.boxHeading_3} text={data.data.boxSubtext_3} icon={faPeopleRoof} hoverText={data.data.boxFlipSideArray_3} />
+                    <DoubleFacedCard title={data.data.boxHeading_4} text={data.data.boxSubtext_4} icon={faPersonShelter} hoverText={data.data.boxFlipSideArray_4} />
                 </div>
             </main>
             <Footer />
         </>
     )
+}
+
+export async function getStaticProps() {
+    const data = await client.fetch(`*[_type=='servicePage'][0]`);
+
+    return {
+        props: {
+            data
+        }
+    };
 }

@@ -30,7 +30,7 @@ export default function DoubleFacedCard({ title, text, icon, hoverText }) {
                         </h3>
                         <ul className="text-[color:var(--ls-blue)] h-64 w-full xl:text-lg text-left">
                             {
-                                hoverText.content && hoverText.content.map((con, i) => {
+                                hoverText && hoverText.map((con, i) => {
                                     return (
                                         <li key={title + i} className="my-2" >
                                             <FontAwesomeIcon icon={faSquareCheck} />
