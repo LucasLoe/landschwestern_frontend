@@ -12,6 +12,10 @@ import { faPersonCane } from '@fortawesome/free-solid-svg-icons'
 import { faPeopleRoof } from '@fortawesome/free-solid-svg-icons'
 import { faPersonShelter } from '@fortawesome/free-solid-svg-icons'
 
+function urlFor(source) {
+    return imageUrlBuilder(client).image(source)
+}
+
 export default function leistungen() {
     return (
         <>
