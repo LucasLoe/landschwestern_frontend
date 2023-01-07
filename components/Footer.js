@@ -13,7 +13,7 @@ export default function Footer() {
             <div className=" footer-row h-auto lg:h-48 w-64 lg:w-auto my-5 mx-0 lg:mx-10 lg:my-2.5">
                 <h3 className="text-[color:var(--ls-white)] font-bold text-lg">ANFAHRT:</h3>
                 <br />
-                <p>Blume & Löser GbR</p>
+                <p>Blume & Schubert GbR</p>
                 <p>Prenzlauer Str. 20</p>
                 <p>17291 Nordwestuckermark</p>
                 <br />
@@ -29,12 +29,12 @@ export default function Footer() {
 
                     <div className="contact-details-row flex-col flex lg:flex-row justify-between">
                         <p><FontAwesomeIcon icon={faPhone} /> Telefon: </p>
-                        <p>039852 18836</p>
+                        <p>039852 498 555</p>
                     </div>
                     <br />
                     <div className="contact-details-row flex-col flex lg:flex-row justify-between">
                         <p><FontAwesomeIcon icon={faPhone} /> Fax: </p>
-                        <p>039852 498533</p>
+                        <p>039852 498 533</p>
                     </div>
                     <br />
                     <div className="contact-details-row flex-col flex lg:flex-row justify-between">
