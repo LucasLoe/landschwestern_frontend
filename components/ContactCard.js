@@ -1,3 +1,4 @@
+import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 import ContactForm from "./ContactForm";
 
@@ -13,9 +14,7 @@ export default function ContactCard({title, text, imageSrc}) {
             />
             <div className='"h-full w-full my-auto mx-auto lg:mx-4 lg:my-8'>
                 <h3 className="text-center lg:text-left text-xl mb-4 mt-4 lg:mt-0 text-[color:var(--ls-blue)] font-bold box-border">{title}</h3>
-                <p className="text-center lg:text-left">
-                    {text}
-                </p>
+                <PortableText className="text-center lg:text-left" value={text} />
             </div>
             <div className="h-full w-full my-auto mx-auto lg:mx-4 py-4">
                 <ContactForm />

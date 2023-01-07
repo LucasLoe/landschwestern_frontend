@@ -8,11 +8,17 @@ import ContactCard from '../components/ContactCard'
 import client from '../client'
 import { PortableText } from '@portabletext/react'
 import imageUrlBuilder from '@sanity/image-url'
+import Carousel from '../components/Carousel'
 
 export default function SeniorCare(data) {
 
+
     function urlFor(source) {
         return imageUrlBuilder(client).image(source)
+    }
+
+    const imageGalleryUrls = () => {
+        return data.data.gallery.map(e => urlFor(e.asset._ref).url())
     }
 
     return (
@@ -31,6 +37,24 @@ export default function SeniorCare(data) {
                     <SingleFacedCard title={data.data.boxHeading_2} text={data.data.boxSubText_2} imageSrc={urlFor(data.data.boxImage_2.asset._ref).url()} />
                     <SingleFacedCard title={data.data.boxHeading_3} text={data.data.boxSubText_3} imageSrc={urlFor(data.data.boxImage_3.asset._ref).url()} />
                     <SingleFacedCard title={data.data.boxHeading_4} text={data.data.boxSubText_4} imageSrc={urlFor(data.data.boxImage_4.asset._ref).url()} />
+                    {
+                        data.data.galleryTextTop && 
+                        <p className='text-center my-8'>
+                            {data.data.galleryTextTop}
+                        </p>
+                    }
+                    {
+                        data.data.gallery &&
+                        <div className="mx-auto w-full md:w-3/4 flex justify-center my-8 h-[350px] lg:h-[500px] rounded">
+                            <Carousel images={imageGalleryUrls()} />
+                        </div>
+                    }
+                                        {
+                        data.data.galleryTextBottom && 
+                        <p className='text-center my-8'>
+                            {data.data.galleryTextTop}
+                        </p>
+                    }
                     <div className='mx-auto'>
                         <ContactCard title={data.data.contactCardHeading} text={data.data.contactCardText} imageSrc={urlFor(data.data.contactCardImage.asset._ref).url()} />
                     </div>
