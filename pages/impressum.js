@@ -25,11 +25,11 @@ export default function Impressum() {
                     <h2 className='text-xl text-[color:var(--ls-blue)] font-bold'> Impressum </h2>
                     <br />
                     <p>
-                        Die Landschwestern - Blume & Löser GbR <br />
+                        Die Landschwestern - Blume & Schubert GbR <br />
                         <br />
-                        Geschäftsführung: Ariane Löser & Kathrin Blume <br />
+                        Geschäftsführung: Ariane Schubert & Kathrin Blume <br />
                         <br />
-                        Blume & Löser GbR <br />
+                        Blume & Schubert GbR <br />
                         Prenzlauer Str. 20 <br />
                         17291 Nordwestuckermark <br />
                         <br />
