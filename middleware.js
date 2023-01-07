@@ -5,8 +5,8 @@ export const config = {
 }
 
 export function middleware(NextRequest) {
-  const basicAuth = req.headers.get('authorization')
-  const url = req.nextUrl
+  const basicAuth = NextRequest.headers.get('authorization')
+  const url = NextRequest.nextUrl
 
   if (basicAuth) {
     const authValue = basicAuth.split(' ')[1]
