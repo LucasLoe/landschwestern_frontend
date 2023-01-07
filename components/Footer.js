@@ -5,6 +5,7 @@ import { faServer } from "@fortawesome/free-solid-svg-icons"
 import { faStamp } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import '@fortawesome/fontawesome-svg-core/styles.css'
+import Link from "next/link"
 
 export default function Footer() {
     return (
@@ -48,9 +49,9 @@ export default function Footer() {
             <div className=" footer-row h-auto lg:h-48 w-64 lg:w-auto my-5 mx-0 lg:mx-20 lg:my-2.5">
                 <h3 className="text-[color:var(--ls-white)] font-bold text-lg"> SONSTIGES:</h3>
                 <br />
-                <p><FontAwesomeIcon icon={faServer} /> <a href="/impressum.html" className="hamburger-link" >Datenschutz</a></p>
+                <p><FontAwesomeIcon icon={faServer} /> <Link href="/impressum" className="hamburger-link" >Datenschutz</Link></p>
                 <br />
-                <p><FontAwesomeIcon icon={faStamp} /><a href="/impressum.html" className="hamburger-link" > Impressum</a></p>
+                <p><FontAwesomeIcon icon={faStamp} /><Link href="/impressum" className="hamburger-link" > Impressum</Link></p>
                 <br />
             </div>
         </footer>
