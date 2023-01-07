@@ -29,9 +29,9 @@ export default function Home({ data }) {
       </Head>
       <Navbar />
       <main>
-        <Wallpaper srcString={urlFor(data.image.asset._ref).url()} />
-        <div id="second-banner" className='h-auto lg:h-[500px] w-full bg-[color:var(--ls-blue)]'>
-          <div className="willkommen-catbox-container flex flex-col lg:flex-row justify-around lg:justify-center align-middle">
+        <Wallpaper srcString={urlFor(data.image.asset._ref).url()}/>
+        <div id="second-banner" className='h-auto lg:h-[550px] w-full bg-[color:var(--ls-blue)] shadow-xl'>
+          <div className="willkommen-catbox-container flex flex-col lg:flex-row justify-center align-middle">
 
             <WelcomePageColoredBox title={data.yellowTitle} text={data.yellowText} icon={faHandsHolding} bgColor='bg-[color:var(--ls-yellow)]' />
 
@@ -42,7 +42,7 @@ export default function Home({ data }) {
           </div>
         </div>
 
-        <div className='h-auto lg:h-[500px] w-full px-4 py-8 flex flex-col lg:flex-row align-center'>
+        <div className='h-auto mx-auto w-full max-w-[1200px] px-4 flex flex-col lg:flex-row align-center'>
           <Image
             src="/assets/ls-logo (1).webp"
             width={500}

@@ -5,7 +5,7 @@ import Image from "next/image"
 
 export default function SingleFacedCard({ title, text, imageSrc }) {
     return (
-        <div className="flex flex-col lg:flex-row min-w-[300px] max-w-[600px] w-full lg:w-[45vw] h-auto bg-[color:var(--ls-blue)] rounded-xl my-4 mx-auto rounded-xl">
+        <div className="flex flex-col lg:flex-row min-w-[300px] max-w-[600px] w-full lg:w-[45vw] h-auto bg-[color:var(--ls-blue)] rounded-xl my-4 mx-auto">
             <Image
                 src={imageSrc}
                 width={500}

@@ -33,10 +33,10 @@ export default function leistungen(data) {
             <main>
             <Wallpaper srcString={urlFor(data.data.image.asset._ref).url()} />
                 <div className='max-w-6xl mx-auto flex flex-row flex-wrap justify-evenly'>
-                    <DoubleFacedCard title={data.data.boxHeading_1} text={data.data.boxSubtext_1} icon={faHospitalUser} hoverText={data.data.boxFlipSideArray_1} />
-                    <DoubleFacedCard title={data.data.boxHeading_2} text={data.data.boxSubtext_2} icon={faPersonCane} hoverText={data.data.boxFlipSideArray_2} />
-                    <DoubleFacedCard title={data.data.boxHeading_3} text={data.data.boxSubtext_3} icon={faPeopleRoof} hoverText={data.data.boxFlipSideArray_3} />
-                    <DoubleFacedCard title={data.data.boxHeading_4} text={data.data.boxSubtext_4} icon={faPersonShelter} hoverText={data.data.boxFlipSideArray_4} />
+                    <DoubleFacedCard title={data.data.boxHeading_1} text={data.data.boxSubText_1} icon={faHospitalUser} hoverText={data.data.boxFlipSideArray_1} />
+                    <DoubleFacedCard title={data.data.boxHeading_2} text={data.data.boxSubText_2} icon={faPersonCane} hoverText={data.data.boxFlipSideArray_2} />
+                    <DoubleFacedCard title={data.data.boxHeading_3} text={data.data.boxSubText_3} icon={faPeopleRoof} hoverText={data.data.boxFlipSideArray_3} />
+                    <DoubleFacedCard title={data.data.boxHeading_4} text={data.data.boxSubText_4} icon={faPersonShelter} hoverText={data.data.boxFlipSideArray_4} />
                 </div>
             </main>
             <Footer />
