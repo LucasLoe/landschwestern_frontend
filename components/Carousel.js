@@ -2,6 +2,7 @@ import { useState, useRef, createRef } from "react";
 import { faCaretLeft, faCaretRight, faDiamond, faCircle } from "@fortawesome/free-solid-svg-icons";
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Image from "next/image";
 
 export default function Carousel({ width = "half", images}) {
   console.log(`images are: ${images}`)
@@ -71,7 +72,13 @@ export default function Carousel({ width = "half", images}) {
                 key={img}
                 ref={refs[i]}
               >
-                <img src={img} className="w-full h-full object-cover" />
+                <Image 
+                priority
+                src={img} 
+                width={1200}
+                height={800}
+                alt="alt text goes here"
+                className="w-full h-full object-cover" />
               </div>
             ))}
           {sliderControl(true)}
