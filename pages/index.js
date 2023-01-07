@@ -42,7 +42,7 @@ export default function Home({ data }) {
           </div>
         </div>
 
-        <div className='h-auto mx-auto w-full max-w-[1200px] px-4 flex flex-col lg:flex-row align-center'>
+        <div className='h-auto mx-auto my-4 lg:my-16 w-full max-w-[1200px] px-4 flex flex-col lg:flex-row align-center'>
           <Image
             src="/assets/ls-logo (1).webp"
             width={500}
