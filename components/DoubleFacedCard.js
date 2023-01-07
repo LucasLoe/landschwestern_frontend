@@ -7,7 +7,7 @@ export default function DoubleFacedCard({ title, text, icon, hoverText }) {
     const [isOpen, setIsOpen] = useState(true)
 
     return (
-        <div className="relative rounded-2xl bg-[color:var(--ls-blue)] min-w-[300px] w-1/3 h-[560px] m-4 shadow-2xl text-center">
+        <div className="relative rounded-2xl bg-[color:var(--ls-blue)] min-w-[300px] w-1/3 h-[580px] m-4 shadow-2xl text-center ">
             {
                 isOpen ?
                     <div id="is-not-clicked" className="h-full cursor-pointer px-4" onMouseEnter={() => { setIsOpen(!isOpen) }} onClick={() => { setIsOpen(!isOpen) }} >
