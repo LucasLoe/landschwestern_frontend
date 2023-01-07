@@ -18,7 +18,7 @@ export default function middleware(request) {
 	// want CSS or JavaScript files to work on the login page.
 	// Here, I'm only password-protecting the homepage and
 	// pages that begin with "/blog". 
-	if ( &&
+	if (
         // Check cookies for correct password.
 		!request.headers
 			.get("Cookie")
