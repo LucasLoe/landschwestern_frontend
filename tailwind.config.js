@@ -9,7 +9,7 @@ module.exports = {
       keyframes: {
         fadein: {
           '0%': { opacity: '0', top: '0px' },
-          '100%': { opacticy: '1', top: '-200px' }
+          '100%': { opacticy: '1', top: '-50vh' }
         }
       },
       animation: {

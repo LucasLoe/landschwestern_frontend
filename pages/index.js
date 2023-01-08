@@ -29,8 +29,8 @@ export default function Home({ data }) {
       </Head>
       <Navbar />
       <main>
-        <Wallpaper srcString={urlFor(data.image.asset._ref).url()} heightAttr="h-[50vh]"/>
-        <div id="second-banner" className='h-auto lg:h-[550px] w-full bg-[color:var(--ls-blue)] shadow-xl'>
+        <Wallpaper srcString={urlFor(data.image.asset._ref).url()} heightAttr="h-[70vh]"/>
+        <div id="second-banner" className='h-auto lg:h-[360px] w-full bg-[color:var(--ls-blue)] shadow-xl'>
           <div className="willkommen-catbox-container flex flex-col lg:flex-row justify-center align-middle">
 
             <WelcomePageColoredBox title={data.yellowTitle} text={data.yellowText} icon={faHandsHolding} bgColor='bg-[color:var(--ls-yellow)]' />
