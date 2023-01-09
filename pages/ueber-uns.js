@@ -16,7 +16,6 @@ export default function ueberUns(data) {
         return imageUrlBuilder(client).image(source)
     }
 
-    console.log(data)
     return (
         <>
             <Head>
@@ -34,7 +33,7 @@ export default function ueberUns(data) {
                         <Image src={urlFor(data.data.imageTop.asset._ref).url()} width={600} height={600} className="object-cover w-[70vw] my-6 mx-auto lg:mx-6 lg:w-60 lg:h-60" alt="something" />
                         <div className="wrapper text-center lg:text-left">
                             <div className="h2-container inline-block relative mb-12 lg:mt-12 lg:mx-auto lg:text-center ">
-                                <h2 className='text-2xl font-extrabold text-[color:var(--ls-blue)] text-center lg:text-left'>{data.data.headerTop}</h2>
+                                <h2 className='text-2xl font-extrabold text-[color:var(--ls-blue)] text-center lg:text-left mark mark-purple'>{data.data.headerTop}</h2>
                                 <div className="yellow-bar"></div>
                             </div>
                             <div>
@@ -48,7 +47,7 @@ export default function ueberUns(data) {
 
                         <div className="wrapper text-center lg:text-left">
                             <div className="h2-container inline-block relative mb-12 lg:mt-12 lg:mx-auto lg:text-center ">
-                                <h2 className='text-2xl font-extrabold text-[color:var(--ls-blue)] text-center lg:text-left'>{data.data.headerBottom}</h2>
+                                <h2 className='text-2xl font-extrabold text-[color:var(--ls-blue)] text-center lg:text-left mark mark-purple'>{data.data.headerBottom}</h2>
                                 <div className="yellow-bar"></div>
                             </div>
                             <div>

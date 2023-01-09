@@ -6,7 +6,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css'
 export default function ColoredBoxParallax({ title = '...', text = '...', icon = { faHandsHolding }, bgColor = 'bg-[color:var(--ls-yellow)]' }) {
 
     return (
-        <div className="container mx-auto lg:mx-[2vw] w-[320px] relative text-center lg:text-left lg:t-0">
+        <div className="animate-fade-in container mx-auto lg:mx-[2vw] w-[320px] relative text-center lg:text-left relative">
             <div className={`willkommen-catbox shadow-xl ${bgColor} my-2 mx-auto py-5 px-4 clip-mobile lg:clip-desktop relative h-[420px] w-2/5 min-w-[320px] lg:my-0 lg:py-16 lg:px-10 lg:max-w-[350px] text-center`}>
                 <FontAwesomeIcon icon={icon} className="mb-12 text-[color:var(--ls-white)] fa fa-7x" />
 

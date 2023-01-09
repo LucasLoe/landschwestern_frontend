@@ -11,8 +11,8 @@ module.exports = {
       },
       keyframes: {
         fadein: {
-          '0%': { opacity: '0', top: '0px' },
-          '100%': { opacticy: '1', top: '-50vh' }
+          '0%': { opacity: '0', top: '50vh' },
+          '100%': { opacticy: '1', top: '0' }
         }
       },
       animation: {

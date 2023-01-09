@@ -46,7 +46,7 @@ export default function Home({ data }) {
             <main>
                 <div className='h-auto mx-auto my-4 lg:my-16 w-full max-w-[1200px] px-4 flex flex-col lg:flex-row align-center'>
                     <Image
-                        src="/assets/ls-logo (1).webp"
+                        src="/assets/ls-logo.webp"
                         width={500}
                         height={500}
                         alt="Das Logo der Landschwestern GbR"
@@ -62,7 +62,6 @@ export default function Home({ data }) {
                         </div>
                     </div>
                 </div>
-            <div className='w-full h-16 bg-header bg-center'>abc</div>
             </main>
             <Footer />
         </>

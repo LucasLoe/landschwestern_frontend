@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import logo from '../public/assets/ls-logo (1).webp'
+import logo from '../public/assets/ls-logo.jpg'
 
 function NavLink({ to, children }) {
     return (
@@ -19,7 +19,7 @@ function MobileNav({ open, setOpen }) {
             <div className="flex items-center justify-center filter drop-shadow-md bg-white h-20"> {/*logo container*/}
                 <Link className="text-xl font-semibold" href="/">
                     <Image
-                        src={logo}
+                        src={'/../public/assets/ls-logo.jpg'}
                         width={80}
                         height={80}
                         alt="Das Logo der Landschwestern"
@@ -53,15 +53,16 @@ export default function Navbar() {
 
     const [open, setOpen] = useState(false)
     return (
-        <nav className="relative z-50 flex filter drop-shadow-md shadow-xl bg-[color:var(--ls-blue)] px-4 py-4 h-20 items-center">
+        <nav className="relative z-50 flex filter drop-shadow-xl shadow-xl bg-[color:var(--ls-blue)] pr-4 h-20 items-center">
             <MobileNav open={open} setOpen={setOpen} />
             <div className="w-3/12 flex items-center">
                 <Link className="text-2xl font-semibold" href="/">
                     <Image
-                        src={logo}
+                        src={'/../public/assets/ls-logo.jpg'}
                         width={80}
                         height={80}
                         alt="Das Logo der Landschwestern"
+                        className='h-full'
                     />
                 </Link>
             </div>
