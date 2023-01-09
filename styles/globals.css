@@ -25,7 +25,8 @@
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 }
 
-html, body {
+html,
+body {
   font-size: 18px;
 }
 
@@ -44,13 +45,35 @@ button,
 textarea,
 input,
 select,
-a{
- -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
- -webkit-tap-highlight-color: transparent;
- -webkit-user-select: none;
- -khtml-user-select: none;
- -moz-user-select: none;
- -ms-user-select: none;
+a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
 
+}
+
+.mark {
+  @apply w-fit pl-2 pr-4 py-1 rounded-sm shadow-lg;
+}
+
+.mark-yellow {
+  @apply bg-[color:var(--ls-yellow)]  text-[color:var(--ls-blue)];
+}
+
+.mark-purple {
+  @apply bg-[color:var(--ls-purple)]  text-[color:var(--ls-blue)];
+}
+
+.mark-blue {
+  @apply bg-[color:var(--ls-blue)]  text-[color:var(--ls-white)];
+}
+
+.bg-header {
+  background: url('../public/assets/parallax-wallpaper.webp') center center no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }

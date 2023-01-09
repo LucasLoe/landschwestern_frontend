@@ -9,7 +9,7 @@ import Link from "next/link"
 
 export default function Footer() {
     return (
-        <footer className="h-auto w-auto lg:w-full bg-[color:var(--ls-blue)] flex flex-col text-left  lg:flex-row justify-evenly items-center align-middle py-0 px-auto lg:p-2 text-[color:var(--ls-white)] mt-8">
+        <footer className="h-auto w-auto lg:w-full bg-[color:var(--ls-blue)] flex flex-col text-left  lg:flex-row justify-evenly items-center align-middle py-0 px-auto lg:p-2 text-[color:var(--ls-white)]">
             <div className=" footer-row h-auto lg:h-48 w-64 lg:w-auto my-5 mx-0 lg:mx-10 lg:my-2.5">
                 <h3 className="text-[color:var(--ls-white)] font-bold text-lg">ANFAHRT:</h3>
                 <br />

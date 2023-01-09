@@ -55,13 +55,15 @@ export default function SeniorCare(data) {
                             <PortableText value={data.data.galleryTextBottom} />
                         </div>
                     }
-                    {
-                        data.data.gallery &&
-                        <div className="mx-auto w-full md:max-w-[895px] flex justify-center  my-8  mx-auto h-[450px] lg:h-[600px] rounded">
+                </div>
+                {
+                    data.data.gallery &&
+                    <div className='w-full bg-[color:var(--ls-purple)]'>
+                        <div className="mx-auto w-full md:max-w-[895px] flex justify-center  mx-auto h-[450px] lg:h-[600px] rounded">
                             <Carousel images={imageGalleryUrls()} />
                         </div>
-                    }
-                </div>
+                    </div>
+                }
             </main>
             <Footer />
         </>

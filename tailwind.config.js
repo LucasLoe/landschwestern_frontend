@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        'blue-rgba': 'rgba(35, 60, 123, 0)'
+      },
       keyframes: {
         fadein: {
           '0%': { opacity: '0', top: '0px' },
@@ -16,7 +19,6 @@ module.exports = {
         'fade-in': 'fadein 1.3s ease-out forwards',
       },
       backgroundImage: {
-        'index-wp': "url('../public/assets/senior-care.webp')",
         'custom-grad': "linear-gradient(to top, rgba(35, 60, 123, 0.8), rgba(35, 60, 123, 0.6))"
       },
     },
