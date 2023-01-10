@@ -6,7 +6,7 @@ import Logo from './/../public/assets/LS_noBackground.webp'
 function NavLink({ to, children }) {
     return (
         <Link href={to} className={`h-20 my-auto tracking-wide font-bold text-[color:var(--ls-white)] text-xl text-center`}>
-            <div className='h-20 hover:bg-[color:var(--ls-yellow)] hover:text-[color:var(--ls-blue)] flex my-auto items-center px-6'>
+            <div className='h-20 hover:bg-[color:var(--ls-purple)] hover:text-[color:var(--ls-blue)] flex my-auto items-center px-6'>
                 {children}
             </div>
         </Link>
@@ -26,22 +26,22 @@ function MobileNav({ open, setOpen }) {
                     /> </Link>
             </div>
             <div className="flex flex-col ml-4 h-full pl-4 pt-4">
-                <Link className=" text-xl font-bold tracking-wider text-[color:var(--ls-yellow)] my-4" href="/" onClick={() => setTimeout(() => { setOpen(!open) }, 100)}>
+                <Link className=" text-xl font-bold tracking-wider text-[color:var(--ls-purple)] my-4" href="/" onClick={() => setTimeout(() => { setOpen(!open) }, 100)}>
                     Startseite
                 </Link>
-                <Link className=" text-xl font-bold tracking-wider text-[color:var(--ls-yellow)] my-4" href="/ueber-uns" onClick={() => setTimeout(() => { setOpen(!open) }, 100)}>
+                <Link className=" text-xl font-bold tracking-wider text-[color:var(--ls-purple)] my-4" href="/ueber-uns" onClick={() => setTimeout(() => { setOpen(!open) }, 100)}>
                     Über Uns
                 </Link>
-                <Link className=" text-xl font-bold tracking-wider text-[color:var(--ls-yellow)] my-4" href="/leistungen" onClick={() => setTimeout(() => { setOpen(!open) }, 100)}>
+                <Link className=" text-xl font-bold tracking-wider text-[color:var(--ls-purple)] my-4" href="/leistungen" onClick={() => setTimeout(() => { setOpen(!open) }, 100)}>
                     Leistungen
                 </Link>
-                <Link className=" text-xl font-bold tracking-wider text-[color:var(--ls-yellow)] my-4" href="/tagespflege" onClick={() => setTimeout(() => { setOpen(!open) }, 100)}>
+                <Link className=" text-xl font-bold tracking-wider text-[color:var(--ls-purple)] my-4" href="/tagespflege" onClick={() => setTimeout(() => { setOpen(!open) }, 100)}>
                     Tagespflege
                 </Link>
-                <Link className=" text-xl font-bold tracking-wider text-[color:var(--ls-yellow)] my-4" href="/seniorenwohngemeinschaft" onClick={() => setTimeout(() => { setOpen(!open) }, 100)}>
+                <Link className=" text-xl font-bold tracking-wider text-[color:var(--ls-purple)] my-4" href="/seniorenwohngemeinschaft" onClick={() => setTimeout(() => { setOpen(!open) }, 100)}>
                     Wohngemeinschaft für Senioren
                 </Link>
-                <Link className=" text-xl font-bold tracking-wider text-[color:var(--ls-yellow)] my-4" href="/jobs" onClick={() => setTimeout(() => { setOpen(!open) }, 100)}>
+                <Link className=" text-xl font-bold tracking-wider text-[color:var(--ls-purple)] my-4" href="/jobs" onClick={() => setTimeout(() => { setOpen(!open) }, 100)}>
                     Jobs
                 </Link>
             </div>
@@ -72,9 +72,9 @@ export default function Navbar() {
                     setOpen(!open)
                 }}>
                     {/* hamburger button */}
-                    <span className={`h-1 w-full bg-[color:var(--ls-white)] rounded-lg transform transition duration-300 ease-in-out ${open ? "rotate-45 translate-y-3.5 bg-amber-500" : ""}`} />
+                    <span className={`h-1 w-full bg-[color:var(--ls-white)] rounded-lg transform transition duration-300 ease-in-out ${open ? "rotate-45 translate-y-3.5 bg-slate-800" : ""}`} />
                     <span className={`h-1 w-full bg-[color:var(--ls-white)] rounded-lg transition-all duration-300 ease-in-out ${open ? "w-0" : "w-full"}`} />
-                    <span className={`h-1 w-full bg-[color:var(--ls-white)] rounded-lg transform transition duration-300 ease-in-out ${open ? "-rotate-45 -translate-y-3.5 bg-amber-500" : ""}`} />
+                    <span className={`h-1 w-full bg-[color:var(--ls-white)] rounded-lg transform transition duration-300 ease-in-out ${open ? "-rotate-45 -translate-y-3.5 bg-slate-800" : ""}`} />
                 </div>
 
                 <div className="hidden lg:flex">
