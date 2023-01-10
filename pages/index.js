@@ -2,7 +2,6 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import Wallpaper from '../components/Wallpaper'
 import { faHandsHolding } from '@fortawesome/free-solid-svg-icons'
 import { faHospitalUser } from '@fortawesome/free-solid-svg-icons'
 import { faLeaf } from '@fortawesome/free-solid-svg-icons'
@@ -34,10 +33,9 @@ export default function Home({ data }) {
             >
                 <div className='h-auto w-full my-16'>
                     <div className="willkommen-catbox-container flex flex-col lg:flex-row justify-center align-middle">
-                        <ColoredBoxParallax title={data.lightBlueTitle} text={data.lightBlueText} icon={faHospitalUser} bgColor='bg-teal-600' />
 
                         <ColoredBoxParallax title={data.yellowTitle} text={data.yellowText} icon={faHandsHolding} bgColor='bg-[color:var(--ls-yellow)]' />
-
+                        <ColoredBoxParallax title={data.lightBlueTitle} text={data.lightBlueText} icon={faHospitalUser} bgColor='bg-teal-600' />
                         <ColoredBoxParallax title={data.darkBlueTitle} text={data.darkBlueText} icon={faLeaf} bgColor='bg-indigo-500' />
 
                     </div>
@@ -46,7 +44,7 @@ export default function Home({ data }) {
             <main>
                 <div className='h-auto mx-auto my-4 lg:my-16 w-full max-w-[1200px] px-4 flex flex-col lg:flex-row align-center'>
                     <Image
-                        src="/assets/ls-logo.webp"
+                        src="/assets/LS_noBackground.webp"
                         width={500}
                         height={500}
                         alt="Das Logo der Landschwestern GbR"
