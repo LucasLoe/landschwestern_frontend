@@ -25,6 +25,7 @@ export default function Tagespflege(data) {
             <Navbar />
             <main>
                 <Wallpaper srcString={urlFor(data.data.image.asset._ref).url()} />
+                <h1 className="text-2xl lg:text-3xl text-[color:var(--ls-blue)] text-center font-extrabold my-8 mx-auto"> Unsere Tagespflege - kurz und knapp: </h1>
                 <div className='max-w-6xl mx-auto flex flex-col lg:flex-row flex-wrap justify-center px-4 lg:px-8 lg:justify-between'>
                     <SingleFacedCard title={data.data.boxHeading_1} text={data.data.boxSubText_1} imageSrc={urlFor(data.data.boxImage_1.asset._ref).url()} />
                     <SingleFacedCard title={data.data.boxHeading_2} text={data.data.boxSubText_2} imageSrc={urlFor(data.data.boxImage_2.asset._ref).url()} />

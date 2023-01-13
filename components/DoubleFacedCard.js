@@ -12,9 +12,9 @@ export default function DoubleFacedCard({ title, text, icon, hoverText }) {
                 isOpen ?
                     <div id="is-not-clicked" className="h-full cursor-pointer px-4" onMouseEnter={() => { setIsOpen(!isOpen) }} onClick={() => { setIsOpen(!isOpen) }} >
                         <FontAwesomeIcon icon={icon} className="fa fa-5x w-[100px] h-[100px] text-white mx-auto my-10" />
-                        <h3 className="text-2xl text-[color:var(--ls-white)] font-extrabold mx-auto" >
+                        <h1 className="text-2xl text-[color:var(--ls-white)] font-extrabold mx-auto" >
                             {title}
-                        </h3>
+                        </h1>
                         <p className="text-white text-md my-4 ">
                             {text}
                         </p>
@@ -25,9 +25,9 @@ export default function DoubleFacedCard({ title, text, icon, hoverText }) {
                     :
                     <div id="is-clicked" className="h-full px-4 cursor-pointer border-8 border-[color:var(--ls-yellow)] bg-white rounded-2xl" onMouseLeave={() => { setIsOpen(!isOpen) }} onClick={() => { setIsOpen(!isOpen) }}>
                         <FontAwesomeIcon icon={icon} className="absolute left-0 right-0 top-[25%] fa fa-10x text-[color:var(--ls-blue)] opacity-10 mx-auto my-10" />
-                        <h3 className="text-2xl text-[color:var(--ls-blue)] my-8 font-extrabold mx-auto">
+                        <h1 className="text-2xl text-[color:var(--ls-blue)] my-8 font-extrabold mx-auto">
                             {title}
-                        </h3>
+                        </h1>
                         <ul className="text-[color:var(--ls-blue)] h-64 w-full xl:text-lg text-left">
                             {
                                 hoverText && hoverText.map((con, i) => {

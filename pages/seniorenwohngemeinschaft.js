@@ -37,6 +37,7 @@ export default function SeniorCare(data) {
             <main>
                 <Wallpaper srcString={urlFor(data.data.image.asset._ref).url()} />
                 <div className='mt-4 max-w-6xl mx-auto flex flex-col lg:flex-row flex-wrap justify-around px-4 lg:px-8 lg:justify-between'>
+                    <h1 className="text-2xl lg:text-3xl text-[color:var(--ls-blue)] text-center font-extrabold my-4 mx-auto"> Unsere Senioren-Wohngemeinschaft mitten in der Uckermark</h1>
                     {
                         data.data.galleryTextTop &&
                         <div className="text-center lg:text-lg text-gray-900 my-8 mx-auto block w-full max-w-[896px]">

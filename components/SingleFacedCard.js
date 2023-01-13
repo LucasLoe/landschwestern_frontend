@@ -14,7 +14,7 @@ export default function SingleFacedCard({ title, text, imageSrc }) {
                 className="object-cover h-1/3 w-full lg:h-full lg:w-[200px] rounded-t-xl lg:rounded-tr-none lg:rounded-l-xl "
             />
             <div className="w-full h-full p-4">
-                <h3 className="text-[color:var(--ls-yellow)] text-center lg:text-left text-xl font-extrabold my-2">{title}</h3>
+                <h2 className="text-[color:var(--ls-yellow)] text-center lg:text-left text-xl font-extrabold my-2">{title}</h2>
                 <p className="text-[color:var(--ls-white)] text-center lg:text-left text-md">{text}</p>
             </div>
         </div>

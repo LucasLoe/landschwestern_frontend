@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import Logo from './/../public/assets/LS_noBackground.webp'
+import Logo from './LS_noBackground.webp'
 
 function NavLink({ to, children }) {
     return (

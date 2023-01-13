@@ -52,9 +52,10 @@ export default function Home({ data }) {
                     />
 
                     <div className='my-auto lg:mx-8 flex flex-col justify-around h-full'>
-                        <h2 className='text-3xl lg:text-4xl text-[color:var(--ls-blue)] text-center lg:text-left font-extrabold mb-8'>
-                            Ihr Pflegedienst in der Uckermark
-                        </h2>
+                        <h1 className='text-3xl lg:text-4xl text-[color:var(--ls-blue)] text-center lg:text-left font-extrabold mb-8'>
+                            Die Landschwestern
+                        </h1>
+                        <h2 className='text-xl lg:text-2xl text-[color:var(--ls-blue)] text-center lg:text-left font-extrabold mb-8'> Ihr Pflegedienst in der Uckermark</h2>
                         <div>
                             <PortableText value={data.bio} className='text-center lg:text-left' />
                         </div>

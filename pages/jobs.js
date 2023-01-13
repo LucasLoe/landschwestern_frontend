@@ -32,19 +32,19 @@ export default function jobs(data) {
           id="job-offer-container"
           className="w-auto px-6 lg:px-[20%] py-12 flex justify-center flex-col"
         >
-          <h2 className="text-4xl text-center text-[color:var(--ls-blue)] font-extrabold">
+          <h1 className="text-4xl text-center text-[color:var(--ls-blue)] font-extrabold">
             {" "}
             {data.data.pageHeading}{" "}
-          </h2>
+          </h1>
           <br />
           <p className="my-4 text-center mx-auto"> {data.data.pageSubheading} </p>
           <br />
 
           <div className="w-fit mx-auto">
             <div className="job-details-container w-full block py-5 px-5 lg:px-12 my-5 mx-auto  rounded-2xl border-8 border-[color:var(--ls-yellow)]">
-              <h3 className="text-2xl lg:text-3xl w-auto font-extrabold text-[color:var(--ls-blue)] text-center ">
+              <h2 className="text-2xl lg:text-3xl w-auto font-extrabold text-[color:var(--ls-blue)] text-center ">
                 {data.data.boxTopHeading}
-              </h3>
+              </h2>
               <br />
               <ul className="text-md lg:text-lg">
                 {data.data.boxTopArray &&
@@ -64,9 +64,9 @@ export default function jobs(data) {
             </div>
 
             <div className="job-details-container job-details-container w-full block py-5 px-5 lg:px-12 my-5 mx-auto rounded-2xl border-8 border-[color:var(--ls-yellow)]">
-              <h3 className="text-2xl lg:text-3xl w-auto font-extrabold text-[color:var(--ls-blue)] text-center">
+              <h2 className="text-2xl lg:text-3xl w-auto font-extrabold text-[color:var(--ls-blue)] text-center">
                 {data.data.boxBottomHeading}
-              </h3>
+              </h2>
               <br />
               <ul className=" text-md lg:text-lg">
                 {data.data.boxBottomArray &&
