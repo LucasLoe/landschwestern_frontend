@@ -7,8 +7,79 @@ import SingleFacedCard from '../components/SingleFacedCard'
 import ContactCard from '../components/ContactCard'
 import imageUrlBuilder from '@sanity/image-url'
 import client from '../client'
+import { useState } from 'react'
 
 export default function Tagespflege(data) {
+
+    const [formData, setFormData] = useState({
+        status: "idle",
+        name: "",
+        phone: "",
+        mail: "",
+        additional: ""
+    })
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log('Sending')
+        setFormData({ ...formData, status: "sending" })
+
+        fetch('/api/mailForm', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        }).then((res) => {
+            console.log('Response received')
+            if (res.status === 200) {
+                setFormData({
+                    status: "success",
+                    name: "",
+                    phone: "",
+                    mail: "",
+                    additional: ""
+                })
+            }
+            else {
+                setFormData({
+                    status: "failure",
+                    name: "",
+                    phone: "",
+                    mail: "",
+                    additional: ""
+                })
+            }
+        })
+    }
+
+    const onPropsChange = (e) => {
+        switch (e.target.id) {
+            case "name":
+                setFormData({
+                    ...formData, name: e.target.value
+                })
+                break
+            case "phone":
+                setFormData({
+                    ...formData, phone: e.target.value
+                })
+                break
+            case "mail":
+                setFormData({
+                    ...formData, mail: e.target.value
+                })
+                break
+            case "additional":
+                setFormData({
+                    ...formData, additional: e.target.value
+                })
+                break
+            default:
+                return
+        }
+    }
 
     function urlFor(source) {
         return imageUrlBuilder(client).image(source)
@@ -32,7 +103,7 @@ export default function Tagespflege(data) {
                     <SingleFacedCard title={data.data.boxHeading_3} text={data.data.boxSubText_3} imageSrc={urlFor(data.data.boxImage_3.asset._ref).url()} />
                     <SingleFacedCard title={data.data.boxHeading_4} text={data.data.boxSubText_4} imageSrc={urlFor(data.data.boxImage_4.asset._ref).url()} />
                     <div className='mx-auto'>
-                        <ContactCard title={data.data.contactCardHeading} text={data.data.contactCardText} imageSrc={urlFor(data.data.contactCardImage.asset._ref).url()}/>
+                        <ContactCard formData={formData} onPropsChange={onPropsChange} handleSubmit={handleSubmit} title={data.data.contactCardHeading} text={data.data.contactCardText} imageSrc={urlFor(data.data.contactCardImage.asset._ref).url()} />
                     </div>
                 </div>
             </main>
@@ -43,10 +114,10 @@ export default function Tagespflege(data) {
 
 export async function getStaticProps() {
     const data = await client.fetch(`*[_type=='daycarePage'][0]`);
-  
+
     return {
-      props: {
-        data
-      }
+        props: {
+            data
+        }
     };
-  }
+}
