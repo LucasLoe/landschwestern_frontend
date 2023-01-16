@@ -16,14 +16,13 @@ export default function Tagespflege(data) {
         name: "",
         phone: "",
         mail: "",
-        additional: ""
+        additional: "",
+        statusCode: ""
     })
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log('Sending')
         setFormData({ ...formData, status: "sending" })
-
         fetch('/api/mailForm', {
             method: 'POST',
             headers: {
@@ -32,14 +31,15 @@ export default function Tagespflege(data) {
             },
             body: JSON.stringify(formData)
         }).then((res) => {
-            console.log('Response received')
+            console.log(res)
             if (res.status === 200) {
                 setFormData({
                     status: "success",
                     name: "",
                     phone: "",
                     mail: "",
-                    additional: ""
+                    additional: "",
+                    statusCode: "200"
                 })
             }
             else {
@@ -48,7 +48,8 @@ export default function Tagespflege(data) {
                     name: "",
                     phone: "",
                     mail: "",
-                    additional: ""
+                    additional: "",
+                    statusCode: res.status
                 })
             }
         })
