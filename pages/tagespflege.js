@@ -23,7 +23,7 @@ export default function Tagespflege(data) {
     const handleSubmit = (e) => {
         e.preventDefault()
         setFormData({ ...formData, status: "sending" })
-        fetch('/api/mailForm', {
+        fetch('sapi/mailForm', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json, text/plain, */*',
