@@ -1,6 +1,6 @@
 import { SIGNATURE_HEADER_NAME, isValidSignature } from '@sanity/webhook';
 
-const handler = async (req, res) => {
+const revalidate = async (req, res) => {
 
     //authenticating the webhook
     try {
