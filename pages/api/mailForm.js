@@ -1,31 +1,9 @@
 export default async function handler(req, res) {
 
+  let nodemailer = require('nodemailer')
+
   const body = req.body
   console.log(body)
-
-  let nodemailer = require('nodemailer')
-  const transporter = nodemailer.createTransport({
-    port: 465,
-    host: "smtp.gmail.com",
-    auth: {
-      user: process.env.MAIL_FROM,
-      pass: process.env.MAIL_PASS,
-    },
-    secure: true,
-  })
-
-  await new Promise((resolve, reject) => {
-    // verify connection configuration
-    transporter.verify(function (error, success) {
-      if (error) {
-        console.log(error);
-        reject(error);
-      } else {
-        console.log("Server is ready to take our messages");
-        resolve(success);
-      }
-    });
-  });
 
   let currentDate = new Date().toJSON().slice(0, 10)
 
@@ -43,27 +21,38 @@ export default async function handler(req, res) {
   </div>
   `
 
-  const mailData = {
-    from: process.env.MAIL_FROM,
-    to: process.env.MAIL_TO,
-    subject: `Landschwestern-um.de - Nachricht vom: ${currentDate}`,
-    text: text,
-    html: htmlText
+  async function mail() {
+
+    const transporter = nodemailer.createTransport({
+      port: 465,
+      host: "smtp.gmail.com",
+      auth: {
+        user: process.env.MAIL_FROM,
+        pass: process.env.MAIL_PASS,
+      },
+      secure: true,
+    })
+
+    let mail = await transporter.sendMail({
+      from: process.env.MAIL_FROM,
+      to: process.env.MAIL_TO,
+      subject: `Landschwestern-um.de - Nachricht vom: ${currentDate}`,
+      text: text,
+      html: htmlText
+    });
   }
 
-  await new Promise((resolve, reject) => {
-    // send mail
-    transporter.sendMail(mailData, (err, info) => {
-      if (err) {
-        console.error(err);
-        reject(err);
-      } else {
-        console.log(info);
-        resolve(info);
-      }
-    });
-  });
-
-  res.status(200).send()
+  try {
+    console.log('sending mail');
+    await mail();
+    res.status(200).send();
+    console.log('mail should be sent');
+  } catch (error) {
+    console.log(error);
+    console.log('error sending mail');
+    res.status(404).send();
+  } finally {
+    res.end();
+  };
 
 }
