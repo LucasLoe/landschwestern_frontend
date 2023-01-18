@@ -20,6 +20,7 @@
     "@sanity/webhook": "^2.0.0",
     "@vercel/edge": "^0.2.1",
     "@vercel/edge-config": "^0.1.0",
+    "dotenv": "^16.0.3",
     "eslint": "8.30.0",
     "eslint-config-next": "13.0.7",
     "next": "13.0.7",
