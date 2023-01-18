@@ -1,5 +1,4 @@
 export default async function mailForm(req, res) {
-
   let nodemailer = require('nodemailer')
 
   const body = req.body
